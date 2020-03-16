@@ -5,6 +5,7 @@
   "author": "luckstar77 <luckstar77y@gmail.com>",
   "scripts": {
     "start": "node run.js",
+    "test": "echo ok",
     "lint": "eslint --ignore-path .gitignore .",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|md)\"",
     "format": "yarn prettier -- --write",
