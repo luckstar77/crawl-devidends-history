@@ -53,8 +53,8 @@ const worker = async () => {
     .get();
 
   for (let stock of parseDepositStocks) {
+    await new Promise(resolve => setTimeout(() => resolve(), 100));
     console.log(stock.symbol);
-    let i = 0;
     $ = cheerio.load(
       await rp({
         uri: 'https://goodinfo.tw/StockInfo/StockDividendPolicy.asp',
@@ -172,7 +172,7 @@ const worker = async () => {
           stock.rightRecoveredCount++;
 
         accu.push({
-          id: stock.symbol + '_' + Date.now() + '_' + index,
+          id: stock.symbol + '_' + index,
           symbol: stock.symbol,
           company: stock.company,
           year,
